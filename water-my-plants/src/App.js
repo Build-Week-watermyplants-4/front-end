@@ -1,13 +1,11 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
-import AccountCreation from './components/AccountCreation';
-import Login from './components/Login';
 
 function App() {
   return (
-     <div className="App">
-         <AccountCreation />
-         <Login />
+    <div className="App">
+      <header className="App-header">
+      </header>
     </div>
   );
 }
