@@ -1,22 +1,25 @@
 import React from "react";
-import styled from "styled-components";
-import { Link, Route, Switch } from 'react-router-dom';
-import App from "../App";
+import { Link} from 'react-router-dom';
 
 
-const StyledHeader = styled.h1`
 
-`
 
-export default function Home() {
+export default function NavBar() {
     
 return (
     <div className='Home'>
     <nav>
       <h1 className='home-header'>Water My Plant</h1>
       <div className='nav-links'>
-        {/* <Link to="/">Home</Link>
-        <Link to="/log-in">Log In</Link> */}
+            <Link className ='Home-btn' to = '/'>
+                  Home
+            </Link>
+            <Link className ='LogIn-btn' to = '/Login'>
+                  Log In
+            </Link>
+            <Link className ='SignUp-btn' to = '/Signup'>
+                  Sign Up
+            </Link>
       </div>
     </nav>
 

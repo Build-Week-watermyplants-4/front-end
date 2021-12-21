@@ -1,6 +1,7 @@
 import React from "react";
 import './App.css';
-import Home from "./components/Homepage";
+import Home from "./components/Home";
+//import NavBar from "./components/Homepage";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
     //   </header>
     // </div>
     <Home />
+    //<NavBar />
   );
 }
 
