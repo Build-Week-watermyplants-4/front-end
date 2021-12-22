@@ -3,7 +3,7 @@ import AccountCreation from '../src/components/AccountCreation';
 import Login from '../src/components/Login';
 import './App.css';
 import Home from "./components/Home";
-//import NavBar from "./components/Homepage";
+import NavBar from "./components/Homepage";
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
        </header>
     <Home />
     <NavBar />
-      <Login/>
+    <AccountCreation />
+    <Login />
     </div>
   );
 }
