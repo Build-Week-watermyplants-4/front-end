@@ -1,19 +1,27 @@
-import React from 'react';
+import React from "react";
+// import AccountCreation from '../src/components/AccountCreation';
+import Login from '../src/components/Login';
 import './App.css';
-//import AccountCreation from './components/AccountCreation';
-import Login from './components/Login';
-//import Home from "./components/Home";
-//import NavBar from "./components/Homepage";
+import Home from "./components/Home";
+import NavBar from "./components/Homepage";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route
+} from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      {/*<Home />*/}
-      <Login />
-      {/*<NavBar />*/}
-      {/*<AccountCreation />*/}
-      </div>
-  );
+    return (
+        <div className="App">
+        <Router>
+            <Routes>
+                <NavBar />
+                <Home />
+                <Login/>
+            </Routes>
+        </Router>
+        </div>
+    );
 }
 
 export default App;
