@@ -4,6 +4,7 @@ import Login from '../src/components/Login';
 import './App.css';
 import Home from "./components/Home";
 import NavBar from "./components/Homepage";
+import PlantForm from '../src/components/PlantForm';
 import {
     BrowserRouter as Router,
     Routes,
@@ -14,10 +15,11 @@ function App() {
     return (
         <div className="App">
         <Router>
+            <NavBar />
+            <Home />
             <Routes>
-                <NavBar />
-                <Home />
-                <Login/>
+                {/*<Login/>*/}
+                {/*<PlantForm/>*/}
             </Routes>
         </Router>
         </div>
