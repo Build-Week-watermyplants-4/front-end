@@ -1,16 +1,17 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import './index.css';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import reportWebVitals from './reportWebVitals';
 
-it('renders Header without crashing', () => {
-  const div = document.createElement('div');
+ReactDOM.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
-  ReactDom.render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>, 
-  div);
-
-  ReactDom.unmountComponentAtNode(div);
-});
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
