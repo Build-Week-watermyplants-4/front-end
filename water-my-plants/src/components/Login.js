@@ -70,7 +70,7 @@ export default function Login() {
         event.preventDefault()
         console.log('move to account creation')
     }
-    
+
     return (
         <form id='login'>
             <StyledLogDiv>
@@ -91,10 +91,10 @@ export default function Login() {
                         onChange={onChange}
                     />
                 </label>
-                
+
             </StyledLogDiv>
 
-              {/* Validation Errors Render Here */}
+            {/* Validation Errors Render Here */}
             {/* <div id='errors'>
                 <div>{formErrors.username}</div>
                 <div>{formErrors.tel}</div>

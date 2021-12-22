@@ -63,13 +63,13 @@ const StyledACButton = styled.button`
     margin-top: 5%;
 `
 
-const initialFormErrors = {
-    username:'',
-    tel:'',
-    password:'',
-    password2:'',
-    tos:false,
-}
+// const initialFormErrors = {
+//     username:'',
+//     tel:'',
+//     password:'',
+//     password2:'',
+//     tos:false,
+// } Enable for validation
 
 const extraStuff = {
     notif: false,
@@ -79,7 +79,7 @@ const extraStuff = {
 // const initialUser = []; // Enable for posting User somewhere
 
 export default function AccountCreation() {
-    
+
     // const [ user, setUser ] = useState(initialUser); // Enable for posting User somewhere
     const [ formValues, setFormValues ] = useState(initialFormValues);
     // const [ formErrors, setFormErrors ] = useState(initialFormErrors); // Enable for validation
@@ -153,7 +153,7 @@ export default function AccountCreation() {
                     />
                 </label>
             </StyledACDiv>
-            
+
             <StyledACDiv2>
                 <label> Please Agree to our Terms of Service
                     <StyledACCheckbox
@@ -188,7 +188,7 @@ export default function AccountCreation() {
             <StyledACDiv>
                 <StyledACButton> Create Account </StyledACButton>
             </StyledACDiv>
-            </form>
+        </form>
     )
 
 }
