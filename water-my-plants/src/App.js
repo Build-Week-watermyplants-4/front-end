@@ -14,14 +14,14 @@ import {
 function App() {
     return (
         <div className="App">
-        <Router>
-            <NavBar />
-            <Home />
-            <Routes>
-                {/*<Login/>*/}
-                {/*<PlantForm/>*/}
-            </Routes>
-        </Router>
+            <Router>
+                <NavBar />
+                <Home />
+                <Routes>
+                    {/*<Login/>*/}
+                    {/*<PlantForm/>*/}
+                </Routes>
+            </Router>
         </div>
     );
 }
