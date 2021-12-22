@@ -1,20 +1,18 @@
-import React from "react";
-import AccountCreation from '../src/components/AccountCreation';
-import Login from '../src/components/Login';
+import React from 'react';
 import './App.css';
-import Home from "./components/Home";
-import NavBar from "./components/Homepage";
+//import AccountCreation from './components/AccountCreation';
+import Login from './components/Login';
+//import Home from "./components/Home";
+//import NavBar from "./components/Homepage";
 
 function App() {
   return (
-     <div className="App">
-       <header className="App-header">
-       </header>
-    <Home />
-    <NavBar />
-    <AccountCreation />
-    <Login />
-    </div>
+    <div className="App">
+      {/*<Home />*/}
+      <Login />
+      {/*<NavBar />*/}
+      {/*<AccountCreation />*/}
+      </div>
   );
 }
 
