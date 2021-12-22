@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, Routes, Route } from "react-router-dom";
+import Login from "./Login";
+import Home from "./Home";
 
 
 
@@ -20,20 +21,11 @@ return (
             <Link className ='SignUp-btn' to = '/Signup'>
                   Sign Up
             </Link>
+            <Link className ='plants-btn' to = '/plants'>
+                  plants
+            </Link>
       </div>
     </nav>
-
-
-    {/* <Switch>
-      <Route path="/log-in">
-        < />
-      </Route>
-      <Route path="/">
-        <Home />
-      </Route>
-    </Switch> */}
-
-
   </div>
 )
 
