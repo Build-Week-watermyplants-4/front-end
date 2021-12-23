@@ -75,7 +75,7 @@ export default function Login() {
 
     const createAccount = event => {
         event.preventDefault()
-        console.log('cronge')
+        console.log('crinky crongemas')
     }
 
     return (

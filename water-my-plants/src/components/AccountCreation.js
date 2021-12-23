@@ -81,12 +81,12 @@ export default function AccountCreation() {
     const [ formValues, setFormValues ] = useState(initialFormValues);
     // const [ formErrors, setFormErrors ] = useState(initialFormErrors); // Enable for validation
 
-    const getNewUser = () => {
-        axios.get('https://build-week-water-plants.herokuapp.com/api/users/1')
-            .then(resp => {
-                console.log(resp.data)
-                setUser([resp.data, ...user]);
-            }).catch(error => console.error(error.response.data.message))}
+    // const getNewUser = () => {
+    //     axios.get('https://build-week-water-plants.herokuapp.com/api/users/1')
+    //         .then(resp => {
+    //             console.log(resp.data)
+    //             setUser([resp.data, ...user]);
+    //         }).catch(error => console.error(error.response.data.message))}
 
     const postNewUser = newUser => {
         axios.post('https://build-week-water-plants.herokuapp.com/api/users', newUser)
