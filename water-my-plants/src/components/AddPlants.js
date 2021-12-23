@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { axiosWithAuth } from "../auth/axiosWithAuth";
 import * as yup from "yup";
+import Plants from "./PlantForm";
 
 const ErrorMessage = styled.p`
   font-family: PT Serif;
@@ -85,9 +86,10 @@ const AddPlant = (props) => {
         };
 
         axiosWithAuth()
-            .post(`/api/userplants`, newPlantData)
+            .post(`https://build-week-water-plants.herokuapp.com/api/plants`, newPlantData)
             .then((res) => {
-                console.log(res);
+                console.log(res)
+                Plants(newPlantData)
             })
             .catch((err) => {
                 console.log({ "AddPlant err:": err });

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const StyledLogDiv = styled.div`
     display: flex;
@@ -18,6 +19,12 @@ const StyledLogButton = styled.button`
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
+    text-decoration: none;
+`
+
+const StyledLink = styled(Link)`
+    color: black;
+    text-decoration: none;
 `
 
 const StyledLogInput = styled.input`
@@ -68,7 +75,7 @@ export default function Login() {
 
     const createAccount = event => {
         event.preventDefault()
-        console.log('move to account creation')
+        console.log('cronge')
     }
 
     return (
@@ -105,7 +112,7 @@ export default function Login() {
 
             <StyledLogDiv>
                 <StyledLogButton type='submit' onClick={onSubmit}> Sign In </StyledLogButton>
-                <StyledLogButton onClick={createAccount}> Create Account </StyledLogButton>
+                <StyledLogButton onClick={createAccount}><StyledLink to="/signup" className="btn btn-primary">Create Account</StyledLink></StyledLogButton>
             </StyledLogDiv>
         </form>
     )

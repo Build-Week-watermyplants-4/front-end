@@ -6,8 +6,8 @@ const StyledACDiv = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: left;
-    justify-content: space-between;
-    width: 40%;
+    justify-content: center;
+    width: 51%;
     margin-left: auto;
     margin-right: auto;
 `
@@ -22,22 +22,18 @@ const StyledACDiv2 = styled.div`
 `
 
 const StyledACInput = styled.input`
-    width: 75%;
     margin: 2%;
 `
 
 const StyledACInput2 = styled.input`
-    width: 55%;
     margin: 2%;
 `
 
 const StyledACInput3 = styled.input`
-    width: 78%;
     margin: 2%;
 `
 
 const StyledACInput4 = styled.input`
-    width: 62%;
     margin: 2%;
 `
 
@@ -46,9 +42,9 @@ const StyledACCheckbox = styled.input`
 `
 
 const initialFormValues = {
-    username:'',
+    user_name:'',
     tel:'',
-    password:'',
+    user_password:'',
     password2:'',
     tos:false,
     notif:true
@@ -77,22 +73,29 @@ const extraStuff = {
     password2: '',
 }
 
-// const initialUser = []; // Enable for posting User somewhere
+const initialUser = []; // Enable for posting User somewhere
 
 export default function AccountCreation() {
 
-    // const [ user, setUser ] = useState(initialUser); // Enable for posting User somewhere
+    const [ user, setUser ] = useState(initialUser); // Enable for posting User somewhere
     const [ formValues, setFormValues ] = useState(initialFormValues);
     // const [ formErrors, setFormErrors ] = useState(initialFormErrors); // Enable for validation
 
-    // const postNewUser = newUser => {
-    //     axios.post('https://git.heroku.com/build-week-water-plants', newUser)
-    //         .then(resp => {
-    //             console.log(resp.data)
-    //             setUser([resp.data, ...user]);
-    //         }).catch(error => console.error(error))
-    //         .finally(() => setFormValues(initialFormValues))
-    // }
+    const getNewUser = () => {
+        axios.get('https://build-week-water-plants.herokuapp.com/api/users/1')
+            .then(resp => {
+                console.log(resp.data)
+                setUser([resp.data, ...user]);
+            }).catch(error => console.error(error.response.data.message))}
+
+    const postNewUser = newUser => {
+        axios.post('https://build-week-water-plants.herokuapp.com/api/users', newUser)
+            .then(resp => {
+                console.log(resp.data)
+                setUser([resp.data, ...user]);
+            }).catch(error => console.error(error.response.data.message))
+            .finally(() => setFormValues(initialFormValues))
+    }
 
     const inputChange = (name, value) => {
         setFormValues({
@@ -109,14 +112,14 @@ export default function AccountCreation() {
 
     const submit = () => {
         const newUser = {
-            username: formValues.username,
+            user_name: formValues.user_name,
             tel: formValues.tel,
-            password: formValues.password,
+            user_password: formValues.user_password,
             tos: formValues.tos,
         }
 
         console.log(newUser);
-        // postNewUser(newUser);
+        postNewUser(newUser);
     }
 
     const onSubmit = event => {
@@ -130,8 +133,8 @@ export default function AccountCreation() {
                 <label> Username
                     <StyledACInput
                         type='text'
-                        name='username'
-                        value={formValues.username}
+                        name='user_name'
+                        value={formValues.user_name}
                         onChange= {onChange}
                     />
                 </label>
@@ -149,8 +152,8 @@ export default function AccountCreation() {
                 <label> Password
                     <StyledACInput3
                         type='password'
-                        name='password'
-                        value={formValues.password}
+                        name='user_password'
+                        value={formValues.user_password}
                         onChange= {onChange}
                     />
                 </label>
