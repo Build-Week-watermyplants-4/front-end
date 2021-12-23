@@ -42,9 +42,9 @@ const StyledACCheckbox = styled.input`
 `
 
 const initialFormValues = {
-    user_name:'',
+    username:'',
     tel:'',
-    user_password:'',
+    password:'',
     password2:'',
     tos:false,
     notif:true
@@ -71,6 +71,7 @@ const StyledACButton = styled.button`
 const extraStuff = {
     notif: false,
     password2: '',
+    tos: false
 }
 
 const initialUser = []; // Enable for posting User somewhere
@@ -81,21 +82,38 @@ export default function AccountCreation() {
     const [ formValues, setFormValues ] = useState(initialFormValues);
     // const [ formErrors, setFormErrors ] = useState(initialFormErrors); // Enable for validation
 
-    // const getNewUser = () => {
-    //     axios.get('https://build-week-water-plants.herokuapp.com/api/users/1')
-    //         .then(resp => {
-    //             console.log(resp.data)
-    //             setUser([resp.data, ...user]);
-    //         }).catch(error => console.error(error.response.data.message))}
+    const getNewUser = () => {
+        axios.get('https://build-week-water-plants.herokuapp.com/api/users')
+            .then(resp => {
+                console.log(resp.data)
+                setUser([resp.data, ...user]);
+            }).catch(error => console.error(error.response.data.message))}
 
     const postNewUser = newUser => {
         axios.post('https://build-week-water-plants.herokuapp.com/api/users', newUser)
             .then(resp => {
                 console.log(resp.data)
                 setUser([resp.data, ...user]);
-            }).catch(error => console.error(error.response.data.message))
+            }).catch(error => console.error(error.response))
             .finally(() => setFormValues(initialFormValues))
     }
+
+    // const postNewUser2 = () => {
+    //     axios({
+    //         method: 'post',
+    //         url: 'https://build-week-water-plants.herokuapp.com/api/users/signup',
+    //         data: {
+    //             user_name: formValues.user_name,
+    //             tel: formValues.tel,
+    //             user_password: formValues.user_password,
+    //             tos: formValues.tos,
+    //         }
+    //       }).then(resp => {
+    //         console.log(resp.data)
+    //         setUser([resp.data, ...user]);
+    //     }).catch(error => console.error(error.response.data))
+    //         .finally(() => setFormValues(initialFormValues))
+    // }
 
     const inputChange = (name, value) => {
         setFormValues({
@@ -112,13 +130,13 @@ export default function AccountCreation() {
 
     const submit = () => {
         const newUser = {
-            user_name: formValues.user_name,
+            username: formValues.username,
             tel: formValues.tel,
-            user_password: formValues.user_password,
-            tos: formValues.tos,
+            password: formValues.password,
         }
 
         console.log(newUser);
+        getNewUser(newUser);
         postNewUser(newUser);
     }
 
@@ -133,8 +151,8 @@ export default function AccountCreation() {
                 <label> Username
                     <StyledACInput
                         type='text'
-                        name='user_name'
-                        value={formValues.user_name}
+                        name='username'
+                        value={formValues.username}
                         onChange= {onChange}
                     />
                 </label>
@@ -152,8 +170,8 @@ export default function AccountCreation() {
                 <label> Password
                     <StyledACInput3
                         type='password'
-                        name='user_password'
-                        value={formValues.user_password}
+                        name='password'
+                        value={formValues.password}
                         onChange= {onChange}
                     />
                 </label>
@@ -173,7 +191,7 @@ export default function AccountCreation() {
                     <StyledACCheckbox
                         type='checkbox'
                         name='tos'
-                        value={formValues.tos}
+                        value={extraStuff.tos}
                         onChange= {onChange}
                     />
                 </label>
