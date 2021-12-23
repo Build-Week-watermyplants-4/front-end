@@ -4,6 +4,9 @@ import styled from 'styled-components'
 
 const StyledP= styled.p`
     text-align: justify;
+    border: 2px solid black;
+    margin: 20px;
+    text-shadow: .5px .5px 2px grey;
 `
 const StyledImg = styled.img`
     border-radius: 90%;
@@ -11,12 +14,16 @@ const StyledImg = styled.img`
     width: 50%;
     float: right; 
     margin: 5px;
+    box-shadow: 8px 8px 4px grey;
 `
-
+const StyledSection = styled.section`
+    text-shadow: .5px .5px 2px grey;
+    color: black;
+`
 
 export default function Home() {
   return (
-  <section className = 'pg home-pg'>
+  <StyledSection className = 'pg home-pg'>
       <article className = 'water'>
           <div className='home-wrapper'>
              <StyledImg
@@ -54,6 +61,6 @@ export default function Home() {
                 Water helps a plant by transporting important nutrients through the plant. Nutrients are drawn from the soil and used by the plant. Without enough water in the cells, the plant will droop, so water helps a plant to stand upright. Water carries dissolved sugar and other nutrients through the plant. Watering your plants is crucial to their life span, and that's why we're here to help.
           </StyledP>
       </article>
-  </section>
+  </StyledSection>
     );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-// import AccountCreation from '../src/components/AccountCreation';
+import AccountCreation from '../src/components/AccountCreation';
 import Login from '../src/components/Login';
 import './App.css';
 import Home from "./components/Home";
@@ -16,10 +16,15 @@ function App() {
         <div className="App">
         <Router>
             <NavBar />
-            <Home />
             <Routes>
-                {/*<Login/>*/}
-                {/*<PlantForm/>*/}
+                <Route path = '/login' element = {<Login />}>
+                </Route>
+                <Route path = '/' element = {<Home />}>
+                </Route>
+                <Route path = '/signup' element = {<AccountCreation />}>
+                </Route>
+                <Route path = '/plants' element = {<PlantForm />}>
+                </Route>
             </Routes>
         </Router>
         </div>
