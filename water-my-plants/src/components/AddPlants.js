@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { axiosWithAuth } from "../auth/axiosWithAuth";
-import addSchema from "./AddSchema";
 import * as yup from "yup";
 
 const ErrorMessage = styled.p`

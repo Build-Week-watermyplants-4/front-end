@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const StyledACDiv = styled.div`
     display: flex;
@@ -84,6 +85,15 @@ export default function AccountCreation() {
     const [ formValues, setFormValues ] = useState(initialFormValues);
     // const [ formErrors, setFormErrors ] = useState(initialFormErrors); // Enable for validation
 
+    // const postNewUser = newUser => {
+    //     axios.post('https://git.heroku.com/build-week-water-plants', newUser)
+    //         .then(resp => {
+    //             console.log(resp.data)
+    //             setUser([resp.data, ...user]);
+    //         }).catch(error => console.error(error))
+    //         .finally(() => setFormValues(initialFormValues))
+    // }
+
     const inputChange = (name, value) => {
         setFormValues({
             ...formValues,
@@ -106,6 +116,7 @@ export default function AccountCreation() {
         }
 
         console.log(newUser);
+        // postNewUser(newUser);
     }
 
     const onSubmit = event => {
